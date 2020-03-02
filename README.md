@@ -1,7 +1,7 @@
 # Quotes DB
 
 
-This webapp is supposed to be a quote DB which I plan to publish to my friends to use it in real life.
+This webapp is supposed to be a quote DB which I plan to publish so my friends can use it in real life.
 
 I went through many interesting chats and found it hard to document if someone said something that's really cool.
 
