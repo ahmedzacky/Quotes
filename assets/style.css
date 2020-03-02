@@ -1,0 +1,14 @@
+body{
+    font-family: sans-serif;
+    background-color: hotpink;
+    background-image: url(outerspaceHands.jpg);
+    color: silver;
+    margin: 5px;
+    padding: 5px;
+    font-size: x-large;
+    background-repeat: no-repeat;
+}
+
+*{
+    margin-left: 50px;
+}

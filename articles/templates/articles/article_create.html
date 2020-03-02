@@ -1,0 +1,13 @@
+{% extends 'base-layout.html' %} 
+{% block content %}
+
+<div class="create-quote">
+    <h2>Create an awesome new Quote</h2>
+    <form action="http://127.0.0.1:8000/quotes/create/" class="site-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Create">
+    </form>
+</div>
+
+{% endblock %}

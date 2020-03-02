@@ -1,0 +1,17 @@
+{% extends 'base-layout.html' %}
+{% block content %}
+    <h1>Quotes</h1>
+    <li>Quotes list</li>
+    <br>
+    <div class="quotes">
+        {% for Quote in quotes %}
+        <ul><div class="quote">
+        <a href="{% url 'detail' slug=Quote.slug %}">{{ Quote.title }}</a>
+        <p>{{ Quote.snippet }}</p>
+        <p>{{ Quote.date }}</p>
+        </div></ul>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}

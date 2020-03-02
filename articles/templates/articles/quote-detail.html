@@ -1,0 +1,12 @@
+{% extends 'base-layout.html' %} 
+{% block content %}
+<div class="quote-detail">
+  <div class="quote">
+    <img src="{{ quote.thumb.url }}" alt="mza200"/>
+    <h2>{{ quote.title }}</h2>
+    <p>{{ quote.body }}</p>
+    <p>{{ quote.date }}</p>
+  </div>
+</div>
+
+{% endblock %}
