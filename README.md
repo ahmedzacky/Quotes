@@ -34,3 +34,6 @@ So here is a list of some stuff I'd like to add before publishing
 5 - Aaaaaand publish
 
 *P.S: currently user gets redirected but the quote doesn't get posted because author model hadn't been setup yet*
+
+
+# added this line to try branching and pushing
