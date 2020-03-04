@@ -8,6 +8,9 @@ class Author(models.Model):
     about = models.TextField(max_length=400)
     link = models.URLField()
 
+    def __str__(self):
+        return self.name
+
 
 class Quote(models.Model):
     # main data

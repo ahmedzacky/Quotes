@@ -6,7 +6,7 @@
     <div class="quotes">
         {% for Quote in quotes %}
         <ul><div class="quote">
-        <a href="{% url 'detail' slug=Quote.slug %}">{{ Quote.title }}</a>
+        <a href="{% url 'quotes:detail' slug=Quote.slug %}">{{ Quote.title }}</a>
         <p>{{ Quote.snippet }}</p>
         <p>{{ Quote.date }}</p>
         </div></ul>
