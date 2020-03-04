@@ -1,15 +1,20 @@
 {% extends 'base-layout.html' %}
 {% block content %}
-    <h1>Quotes</h1>
+    <h1>Menawar ya king</h1>
     <li>Quotes list</li>
     <br>
     <div class="quotes">
         {% for Quote in quotes %}
-        <ul><div class="quote">
-        <a href="{% url 'detail' slug=Quote.slug %}">{{ Quote.title }}</a>
-        <p>{{ Quote.snippet }}</p>
-        <p>{{ Quote.date }}</p>
-        </div></ul>
+        <ul>
+            <div class="quote">
+                <a href="{% url 'detail' slug=Quote.slug %}"> {{ Quote.title }}</a>
+                <p class="quote-detail">
+                    {{ Quote.snippet }}
+                </p>
+                <p class="author">{{ Quote.author }}</p>
+                <p class="date">{{ Quote.date }}</p>
+                </div>
+        </ul>
         {% endfor %}
     </div>
 </body>

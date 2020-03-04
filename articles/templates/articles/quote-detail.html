@@ -1,12 +1,12 @@
 {% extends 'base-layout.html' %} 
 {% block content %}
-<div class="quote-detail">
-  <div class="quote">
-    <img src="{{ quote.thumb.url }}" alt="mza200"/>
-    <h2>{{ quote.title }}</h2>
-    <p>{{ quote.body }}</p>
-    <p>{{ quote.date }}</p>
+
+<div class="quote">
+  <a href="{% url 'detail' slug=Quote.slug %}">{{ Quote.title }}</a>
+  <p class="quote-detail">{{ Quote.body }}</p>
+  <p class="author">{{ Quote.author }}</p>
+  <img src="{{ Quote.thumb.url }}" alt="mza200 - image is buggy :("/>
+  <p class="date">{{ Quote.date }}</p>
   </div>
-</div>
 
 {% endblock %}

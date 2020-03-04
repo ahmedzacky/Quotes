@@ -9,17 +9,25 @@
 </head>
 <body>
    <div class="wrapper">
-       <h1><a href="{% url 'list' %}">Quotes</a></h1>
-       <nav><ul>
-           <li>
-                <form class="logout-link" action="/accounts/logout/" method="post">
-                {% csrf_token %}
-                <button type="submit">Logout</button>
-                </form>
-
-
-           </li>
-        </ul></nav>
+       <div class="header">
+            <h1><a href="{% url 'list' %}">Quotes DB</a></h1>
+        <nav>
+            <ul>
+                <li>
+                    {% if user.is_authenticated  %}
+                    <form class="logout-link" action="/accounts/logout/" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                    <a href="http://127.0.0.1:8000/quotes/create/" class="create">Create</a>
+                    {% else %}
+                    <a href="http://127.0.0.1:8000/accounts/login/"class="login">Login</a>
+                    <a href="http://127.0.0.1:8000/accounts/signup/" class="signup">Signup</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+        </div>
     {% block content %}
     {% endblock %}
    </div>
