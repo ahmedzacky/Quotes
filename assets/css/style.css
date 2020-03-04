@@ -12,3 +12,50 @@ body {
   right: 0px !important;
   left: auto !important;
 }
+
+.create_quote h2{
+  margin-top: 10px;
+}
+
+.container-fluid {
+  height: 80vh;
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid plum;
+  border-radius: 5px;
+}
+
+.site-form{margin-top: 30px;}
+
+.site-form input,
+.site-form label{
+  display: block;
+  margin: 5px auto;
+  color: plum;
+  font-weight: 700;
+  font-size: x-large;
+}
+
+textarea#id_body{
+  height: 10vh;
+  width: 50% ;
+}
+
+.site-form input{
+  width: 50%;
+}
+
+.site-form input[type= submit]{
+  background-color: plum;
+  color: blueviolet;
+  margin: 20px auto;
+  height: 7vh;
+  border: none;
+  border-radius: 5px;
+}
+
+input#id_thumb{
+  overflow: visible;
+  justify-self: auto;
+  font-size: small;
+}
