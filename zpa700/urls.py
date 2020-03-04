@@ -1,16 +1,16 @@
 from django.contrib import admin
 from django.urls import path, include
-from .import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 
+from quotes.views import index as quotes_index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', views.about),
-    path('', views.homepage),
-    path('quotes/', include('articles.urls')),
+    path('', quotes_index, name='index'),
+    
+    path('quotes/', include('quotes.urls')),
     path('accounts/', include('accounts.urls')),
 ]
 
