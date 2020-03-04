@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+
+{% block title %} Y0 Pr0Fil3 {% endblock title %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+
+
+    <div class="card" >
+        <img 
+          {% if account.avatar %}
+          src="{{ account.avatar.url }}"
+          {% else %}
+          src="/static/img/default_avatar.jpeg"
+          {% endif %}
+          class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{ account.name|default:"" }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ account.user.username|default:"" }}
+        </h6>
+        <p class="card-text">
+            {{ account.bio }}
+        </p>
+        {% if can_edit %}
+            <a href="{% url 'accounts:edit_profile' %}" class="card-link btn btn-success">Edit</a>
+        {% else %}
+          {% if does_follow %}
+              <a href="{% url 'accounts:unfollow_api' account.id %}" 
+                 class="card-link btn btn-danger">Unfollow</a>
+          {% else %}
+              <a href="{% url 'accounts:follow_api' account.id %}" 
+                 class="card-link btn btn-primary">Follow</a>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+
+
+  </div>
+  <div class="col-lg-3"></div>
+</div>
+
+{% endblock content %}

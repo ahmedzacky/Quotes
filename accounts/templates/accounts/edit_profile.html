@@ -1,0 +1,62 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+{% block title %} Y0 Pr0Fil3 Ed1t P4g3 {% endblock title %}
+
+<div class="row">
+    <!-- padding div -->
+    <div class="col-lg-3"></div>
+
+    <!-- main content div -->
+    <div class="col-lg-6 card">
+        <div class="card-body">
+            <!-- main edit form -->
+            <form method="POST" action="{% url 'accounts:edit_profile' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- name input -->
+                <h5 class="card-title">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">{{ form.name.label }}</span>
+                        </div>
+                        {{ form.name }}
+                    </div>
+                </h5>
+
+                <!-- username indicator -->
+                <h6 class="card-subtitle mb-2 text-muted">
+                    username: {{ request.user.username|default:"" }}
+                </h6>
+
+                <p class="card-text">
+                    <!-- bio input -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text">{{ form.bio.label }}</span>
+                        </div>
+                        {{ form.bio }}
+                    </div>
+
+                    <!-- avatar image upload input -->
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">{{ form.avatar.label }}</span>
+                        </div>
+                        <div class="custom-file">
+                        {{ form.avatar }}
+                        <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
+                        </div>
+                    </div>
+                </p>
+                
+                <!-- submit button -->
+                <input type="submit" class="btn btn-success" value="Edit">
+            </form>
+        </div>
+    </div>
+
+    <!-- padding div -->
+    <div class="col-lg-3"></div>
+</div>
+
+{% endblock content %}
