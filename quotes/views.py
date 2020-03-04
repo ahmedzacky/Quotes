@@ -20,9 +20,12 @@ def create(request):
     if request.method == 'POST':
         form = createQuote(request.POST, request.FILES)
         if form.is_valid():
-            new_qt = form.save(commit = False)
-            new_qt.author = request.user
-            new_qt.save()
+            new_qt =  Quote(
+                title = form.cleaned_data['title'],
+                body = form.cleaned_data['body'],
+                thumb = form.cleaned_data['thumb'],
+                slug = form.cleaned_data['title'].replace('', '-')
+            )
             return redirect('http://127.0.0.1:8000/quotes')
     else:
         form = createQuote()
