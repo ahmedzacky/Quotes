@@ -24,8 +24,9 @@ def create(request):
                 title = form.cleaned_data['title'],
                 body = form.cleaned_data['body'],
                 thumb = form.cleaned_data['thumb'],
-                slug = form.cleaned_data['title'].replace('', '-')
+                slug = form.cleaned_data['title'].replace(' ', '-')
             )
+            new_qt.save()
             return redirect('http://127.0.0.1:8000/quotes')
     else:
         form = createQuote()
