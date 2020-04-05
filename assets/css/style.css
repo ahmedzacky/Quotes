@@ -39,6 +39,12 @@ a{
   border-radius: 5px;
 }
 
+
+form{
+  margin: 2em auto;
+  text-align: center;
+}
+
 .site-form{
   margin-top: 30px auto;}
 
@@ -55,21 +61,12 @@ a{
 
 textarea#id_body{
   height: 10vh;
-  width: 50% ;
+  width: 80% ;
   margin: 0 auto;
 }
 
 .site-form input{
-  width: 50%;
-}
-
-button{
-  background-color: plum;
-  color: blueviolet;
-  margin: 20px auto;
-  height: 7vh;
-  border: none;
-  border-radius: 5px;
+  width: 80%;
 }
 
 input#id_thumb{
@@ -80,6 +77,7 @@ input#id_thumb{
 
 
 .quote{
+  padding: 0.5em;
   border: 1px solid red;
   margin: auto;
   overflow: hidden;
@@ -88,8 +86,4 @@ input#id_thumb{
 .quote-image{
   margin: auto;
   height: 60vh
-}
-
-form{
-  text-align: center;
 }

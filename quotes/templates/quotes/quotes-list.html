@@ -4,7 +4,7 @@
     <li>Quotes list</li>
     <br>
     <div class="quotes">
-        {% for Quote in quotes %}
+        {% for Quote in page_obj %}
         <ul>
             <div class="quote">
                 <a href="{% url 'quotes:detail' slug=Quote.slug %}"> {{ Quote.title }}</a>
@@ -14,6 +14,23 @@
             </div>
         </ul>
         {% endfor %}
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 </body>
 </html>

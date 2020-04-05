@@ -2,11 +2,15 @@ from django.shortcuts import render,redirect
 from .models import Quote
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from .forms import *
 
 def index(request):
     quotes = Quote.objects.all().order_by('date_added')
-    return render(request,"quotes/quotes-list.html",{'quotes': quotes})
+    paginator = Paginator(quotes, 7)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request,"quotes/quotes-list.html",{'page_obj': page_obj})
 
 def detail(request, slug):
     quote = Quote.objects.get(slug=slug)
