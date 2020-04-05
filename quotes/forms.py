@@ -1,7 +1,7 @@
-from django import forms
+from django.forms import ModelForm
 from .import models
 
-class createQuote(forms.ModelForm):
+class createQuote(ModelForm):
     class Meta:
         model = models.Quote
-        fields = [ 'title', 'body', 'thumb', 'slug']
+        fields = [ 'title', 'body', 'image' ]

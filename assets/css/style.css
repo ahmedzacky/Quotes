@@ -1,10 +1,25 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-image: url(../img/outerspaceHands.jpg);
+  color: silver;
+  text-decoration: none;
+  list-style: none;
 }
 
 .navbar {
     background-image: linear-gradient(to right, #422146, #0f0617);
     box-shadow: 0px 4px 8px 2px #000000;
+}
+
+a{
+  text-decoration: none;
+  text-align: center;
+  font-size: x-large;
 }
 
 .dropdown-menu {
@@ -24,7 +39,10 @@ body {
   border-radius: 5px;
 }
 
-.site-form{margin-top: 30px;}
+.site-form{
+  margin-top: 30px auto;}
+
+
 
 .site-form input,
 .site-form label{
@@ -38,13 +56,14 @@ body {
 textarea#id_body{
   height: 10vh;
   width: 50% ;
+  margin: 0 auto;
 }
 
 .site-form input{
   width: 50%;
 }
 
-.site-form input[type= submit]{
+button{
   background-color: plum;
   color: blueviolet;
   margin: 20px auto;
@@ -57,4 +76,20 @@ input#id_thumb{
   overflow: visible;
   justify-self: auto;
   font-size: small;
+}
+
+
+.quote{
+  border: 1px solid red;
+  margin: auto;
+  overflow: hidden;
+}
+
+.quote-image{
+  margin: auto;
+  height: 60vh
+}
+
+form{
+  text-align: center;
 }

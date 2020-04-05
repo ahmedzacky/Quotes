@@ -8,7 +8,7 @@ class Quote(models.Model):
     slug = models.SlugField()
     body = models.TextField(max_length=400)
     author = models.ForeignKey(Account, null=True, on_delete=models.SET_NULL)
-    thumb = models.ImageField(blank=True)
+    image = models.ImageField(blank=True)
     # meta data
     date_added = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)

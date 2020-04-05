@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="quote">
+  <h3 class="quote-title">{{ Quote.title }}</h3>
+  <p class="quote-detail">{{ Quote.body }}</p>
+  <p class="author">{{ Quote.author }}</p>
+  {% if Quote.image.url != null  %}
+  <img class="quote-image" src="{{ Quote.image.url }}" alt="mza200 - image is buggy :("/>
+  {% endif %}
+    
+  
+  <p class="date">{{ Quote.date_added }}</p>
+  </div>
+
+{% endblock %}

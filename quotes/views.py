@@ -6,11 +6,11 @@ from .forms import *
 
 def index(request):
     quotes = Quote.objects.all().order_by('date_added')
-    return render(request,"articles/article_list.html",{'quotes': quotes})
+    return render(request,"quotes/quotes-list.html",{'quotes': quotes})
 
 def detail(request, slug):
     quote = Quote.objects.get(slug=slug)
-    return render(request, 'articles/quote-detail.html',{'Quote': quote})
+    return render(request, 'quotes/quote-detail.html',{'Quote': quote})
 
 def search(request):
     pass
@@ -23,11 +23,11 @@ def create(request):
             new_qt =  Quote(
                 title = form.cleaned_data['title'],
                 body = form.cleaned_data['body'],
-                thumb = form.cleaned_data['thumb'],
+                image = form.cleaned_data['image'],
                 slug = form.cleaned_data['title'].replace(' ', '-')
             )
             new_qt.save()
             return redirect('http://127.0.0.1:8000/quotes')
     else:
         form = createQuote()
-    return render(request, 'articles/article_create.html', {'form':form})
+    return render(request, 'quotes/quotes-create.html', {'form':form})
