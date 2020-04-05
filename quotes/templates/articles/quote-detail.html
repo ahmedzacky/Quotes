@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="quote">
-  <a href="{% url 'detail' slug=Quote.slug %}">{{ Quote.title }}</a>
+  <a href="{% url 'quotes:detail' slug=Quote.slug %}">{{ Quote.title }}</a>
   <p class="quote-detail">{{ Quote.body }}</p>
   <p class="author">{{ Quote.author }}</p>
   <img src="{{ Quote.thumb.url }}" alt="mza200 - image is buggy :("/>
