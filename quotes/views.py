@@ -10,7 +10,7 @@ def index(request):
 
 def detail(request, slug):
     quote = Quote.objects.get(slug=slug)
-    return render(request, 'articles/quote-detail.html',{'quote': quote})
+    return render(request, 'articles/quote-detail.html',{'Quote': quote})
 
 def search(request):
     pass

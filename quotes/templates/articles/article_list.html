@@ -5,10 +5,9 @@
     <br>
     <div class="quotes">
         {% for Quote in quotes %}
-<<<<<<< HEAD
         <ul>
             <div class="quote">
-                <a href="{% url 'detail' slug=Quote.slug %}"> {{ Quote.title }}</a>
+                <a href="{% url 'quotes:detail' slug=Quote.slug %}"> {{ Quote.title }}</a>
                 <p class="quote-detail">
                     {{ Quote.snippet }}
                 </p>
@@ -16,13 +15,6 @@
                 <p class="date">{{ Quote.date }}</p>
                 </div>
         </ul>
-=======
-        <ul><div class="quote">
-        <a href="{% url 'quotes:detail' slug=Quote.slug %}">{{ Quote.title }}</a>
-        <p>{{ Quote.snippet }}</p>
-        <p>{{ Quote.date }}</p>
-        </div></ul>
->>>>>>> 5be5101f8563b7594f6e084c8899fc98b5a8a573
         {% endfor %}
     </div>
 </body>
