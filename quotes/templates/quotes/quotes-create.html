@@ -2,13 +2,14 @@
 {% block content %}
 
 <div class="create-quote">
-    <h2>Create an awesome new Quote</h2>
-    <form action="{% url 'quotes:create' %}" class="site-form" method="POST" enctype="multipart/form-data" class="form-group">
+    <h2>Post a awesome new Quote</h2>
+    <form action="{% url 'quotes:create' %}" class="site-form" method="POST" enctype="multipart/form-data" class="form-group" onsubmit="myFunction()">
         {% load crispy_forms_tags %}
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-success">Post Quote</button>
     </form>
+    <p id="text"></p>
 </div>
 
 {% endblock %}

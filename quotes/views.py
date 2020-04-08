@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from .forms import *
+from django.utils.text import slugify
 
 def index(request):
     quotes = Quote.objects.all().order_by('date_added')
@@ -28,7 +29,6 @@ def create(request):
                 title = form.cleaned_data['title'],
                 body = form.cleaned_data['body'],
                 image = form.cleaned_data['image'],
-                slug = form.cleaned_data['title'].replace(" ", "-")
             )
             new_qt.save()
             return redirect('index')
