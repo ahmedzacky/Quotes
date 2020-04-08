@@ -28,10 +28,10 @@ def create(request):
                 title = form.cleaned_data['title'],
                 body = form.cleaned_data['body'],
                 image = form.cleaned_data['image'],
-                slug = form.cleaned_data['title'].replace(' ', '-')
+                slug = form.cleaned_data['title'].replace(" ", "-")
             )
             new_qt.save()
-            return redirect('http://127.0.0.1:8000/quotes')
+            return redirect('index')
     else:
         form = createQuote()
     return render(request, 'quotes/quotes-create.html', {'form':form})
