@@ -23,17 +23,13 @@ Wish me luck  :smiley:
 
 So here is a list of some stuff I'd like to add before publishing
 
-1- Redirect user to quotes page after posting quote
+1. - [x] Redirect user to quotes page after posting quote
+2. Add author to models where author is always user unless otherwise specified
+3. - [x] Set quote title in a way to avoid duplicates
+4. - [x] Give it a bit more styling
+5. Add votes , up and down
+6. Publish
 
-2- Add author to models where author is always user
-
-3- Set quote title in a way to avoid duplicates
-
-4- Give it a bit more styling
-
-5 - Aaaaaand publish
-
-*P.S: currently user gets redirected but the quote doesn't get posted because author model hadn't been setup yet*
-
-
-# added this line to try branching and pushing
+# Contributers
+* Marwan Nabil
+* Nagy Dawood
